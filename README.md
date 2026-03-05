@@ -2,20 +2,27 @@
 
 ## Struktur Direktori
 
-Berikut struktur proyek yang digunakan:
-
-```text
 MLOps-Sistem-Prediksi-Kondisi-Lalu-Lintas/
-├── data/           → Berkaitan dengan data yang diambil (data ada versioningnya)
-│   ├── raw/        → Data mentah dari API
-│   └── processed/  → Data yang sudah dibersihkan
-├── models/         → Penyimpanan model hasil training
-├── notebooks/      → Eksperimen dan Exploratory Data Analysis (EDA)
-├── src/            → Source code utama (data ingestion, training, dll)
-│   └── hello.py    → Script coba coba saat setup
-├── config/         → File konfigurasi (parameter, setting, dsb)
-├── tests/          → Unit testing
-├── docs/           → Dokumentasi tambahan
-├── .gitignore      → File untuk mengabaikan file/folder tertentu di Git
-├── LICENSE         → Lisensi proyek
-└── README.md       → Dokumentasi proyek
+│
+├── data/                      # Penyimpanan dataset (menggunakan data versioning)
+│   ├── raw/                   # Data mentah yang diambil dari API
+│   └── processed/             # Data yang sudah dibersihkan dan diproses
+│
+├── models/                    # Penyimpanan model hasil training
+│
+├── notebooks/                 # Notebook untuk eksperimen dan Exploratory Data Analysis (EDA)
+│
+├── src/                       # Source code utama proyek
+│   └── hello.py               # Script percobaan saat setup awal proyek
+│
+├── config/                    # File konfigurasi proyek
+│
+├── tests/                     # Unit testing untuk memastikan kode berjalan dengan benar
+│
+├── docs/                      # Dokumentasi tambahan proyek
+│
+├── .gitignore                 # File untuk menentukan file/folder yang diabaikan oleh Git
+│
+├── LICENSE                    # Lisensi proyek
+│
+└── README.md                  # Dokumentasi proyek
