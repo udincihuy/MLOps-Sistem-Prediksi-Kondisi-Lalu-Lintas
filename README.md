@@ -18,4 +18,4 @@ MLOps-Sistem-Prediksi-Kondisi-Lalu-Lintas/
 ├── docs/           → Dokumentasi tambahan
 ├── .gitignore      → File untuk mengabaikan file/folder tertentu di Git
 ├── LICENSE         → Lisensi proyek
-└── README.md       → Dokumentasi utama proyek
+└── README.md       → Dokumentasi proyek
