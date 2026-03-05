@@ -1,28 +1,27 @@
-# Sistem Prediksi Kondisi Lalu Lintas Berbasis MLOps
-
 ## Struktur Direktori
 
+Berikut struktur proyek yang digunakan:
+
+```bash
 MLOps-Sistem-Prediksi-Kondisi-Lalu-Lintas/
 │
-├── data/                      # Penyimpanan dataset (menggunakan data versioning)
-│   ├── raw/                   # Data mentah yang diambil dari API
-│   └── processed/             # Data yang sudah dibersihkan dan diproses
+├── data/                      # Berkaitan dengan data yang diambil (data ada versioningnya)
+│   ├── raw/                   # Data mentah dari API
+│   └── processed/             # Data yang sudah dibersihkan
 │
 ├── models/                    # Penyimpanan model hasil training
 │
-├── notebooks/                 # Notebook untuk eksperimen dan Exploratory Data Analysis (EDA)
+├── notebooks/                 # Eksperimen dan Exploratory Data Analysis
 │
-├── src/                       # Source code utama proyek
-│   └── hello.py               # Script percobaan saat setup awal proyek
+├── src/                       # Source code utama
+│   └── hello.py               # Script coba coba saat setup
 │
-├── config/                    # File konfigurasi proyek
+├── config/                    # File konfigurasi
 │
-├── tests/                     # Unit testing untuk memastikan kode berjalan dengan benar
+├── tests/                     # Unit testing
 │
-├── docs/                      # Dokumentasi tambahan proyek
+├── docs/                      # Dokumentasi tambahan
 │
-├── .gitignore                 # File untuk menentukan file/folder yang diabaikan oleh Git
-│
+├── .gitignore                 # File untuk mengabaikan file/folder tertentu di Git
 ├── LICENSE                    # Lisensi proyek
-│
-└── README.md                  # Dokumentasi proyek
+└── README.md                  # Dokumentasi utama proyekgit add README.md
