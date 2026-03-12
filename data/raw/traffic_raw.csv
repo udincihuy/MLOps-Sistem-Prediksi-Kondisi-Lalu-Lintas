@@ -1,0 +1,11 @@
+from,to,distance_km,time_seconds,realTime_seconds,traffic_condition
+"New York, NY","Washington, DC",226.4749,13103,14382,lancar
+"Los Angeles, CA","San Diego, CA",120.4702,6467,7130,padat
+"Chicago, IL","Detroit, MI",282.1541,14426,15127,lancar
+"Dallas, TX","Houston, TX",238.8333,11759,12223,lancar
+"San Francisco, CA","San Jose, CA",48.334,3009,2960,lancar
+"Boston, MA","Philadelphia, PA",313.4874,18016,19713,lancar
+"Seattle, WA","Portland, OR",174.4991,9701,10221,lancar
+"Miami, FL","Orlando, FL",236.6846,11879,13225,padat
+"Atlanta, GA","Charlotte, NC",245.6094,12901,13705,lancar
+"Denver, CO","Salt Lake City, UT",521.889,26704,27000,lancar
