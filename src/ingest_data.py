@@ -4,7 +4,7 @@ import os
 
 def ingest_data():
     
-    data = yf.download("CL=F", period="730d", interval="1d")
+    data = yf.download("CL=F", period="2000d", interval="1d")
 
 
     if isinstance(data.columns, pd.MultiIndex):
