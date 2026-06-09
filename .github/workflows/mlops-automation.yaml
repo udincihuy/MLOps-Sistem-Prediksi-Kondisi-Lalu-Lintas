@@ -23,11 +23,21 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+## DVC PULL ##
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
           pip install dvc dagshub
+
+      - name: Configure DVC Auth
+        run: |
+          dvc remote modify --local origin auth basic
+          dvc remote modify --local origin user ${{ github.actor }}
+          dvc remote modify --local origin password ${{ secrets.DAGSHUB_TOKEN }}
+
+      - name: Pull Data From DVC
+        run: |
+          dvc pull
 
       - name: Check DVC Status
         run: |
