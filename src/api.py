@@ -1,30 +1,44 @@
 from fastapi import FastAPI
 import pandas as pd
+import yfinance as yf
 import mlflow
 
 app = FastAPI()
 
-mlflow.set_tracking_uri("sqlite:///mlflow.db")
-mlflow.set_registry_uri("sqlite:///mlflow.db")
-
 model = mlflow.pyfunc.load_model(
-    "models:/harga_minyak_model/Production"
+    "best_model"
 )
+
 
 @app.get("/")
 def home():
-    return {"message": "Oil Price Prediction API"}
+    return {
+        "message": "Oil Price Prediction API"
+    }
+
 
 @app.post("/predict")
 def predict():
 
-    data = pd.DataFrame({
-        "lag1": [100],
-        "lag2": [98],
-        "ma3": [99]
+    data = yf.download(
+        "CL=F",
+        period="5d",
+        progress=False
+    )
+
+    close = data["Close"]
+
+    lag1 = float(close.iloc[-1])
+    lag2 = float(close.iloc[-2])
+    ma3 = float(close.tail(3).mean())
+
+    X = pd.DataFrame({
+        "lag1": [lag1],
+        "lag2": [lag2],
+        "ma3": [ma3]
     })
 
-    prediction = model.predict(data)
+    prediction = model.predict(X)
 
     return {
         "prediction": float(prediction[0])
