@@ -69,3 +69,4 @@ Model ini dipilih karena memiliki nilai RMSE paling kecil.
 
 ## Data Versioning (DVC)
 Dataset dikelola menggunakan DVC agar perubahan data dapat dilacak.
+    

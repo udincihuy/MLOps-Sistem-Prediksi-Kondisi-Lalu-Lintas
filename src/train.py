@@ -29,7 +29,10 @@ def train_model(alpha):
 
     y_pred = model.predict(X_test)
     rmse = mean_squared_error(y_test, y_pred) ** 0.5
+    THRESHOLD = 10
 
+    if rmse > THRESHOLD:
+        raise ValueError(f"RMSE terlalu besar: {rmse}")
     return model, rmse
 
 

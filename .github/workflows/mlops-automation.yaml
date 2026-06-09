@@ -1,0 +1,79 @@
+name: MLOps Automation Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - lk08
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install dvc dagshub
+
+      - name: Check DVC Status
+        run: |
+          dvc status
+
+      - name: Run Preprocessing
+        run: |
+          python src/preprocess.py
+
+      - name: Run Unit Testing
+        run: |
+          pytest
+
+  train:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Preprocessing
+        run: |
+          python src/preprocess.py
+
+      - name: Train Model
+        run: |
+          python src/train.py
+
+  evaluate:
+    needs: train
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Evaluation Success
+        run: |
+          echo "Model berhasil dilatih dan lolos evaluasi threshold"
