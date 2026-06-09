@@ -1,4 +1,4 @@
-#!/workspaces/MLOps-Prediksi-Minyak/.venv/bin/python3
+#!/workspaces/MLOps-Prediksi-Minyak/.venv/bin/python
 
 import logging
 import os

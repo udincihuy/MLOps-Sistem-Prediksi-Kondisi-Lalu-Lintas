@@ -26,16 +26,11 @@ services:
     networks:
       - mlops-network
 
-  api-service:
-    build: .
-
-    container_name: api-service
+  model-serving:
+    image: harga-minyak-serving:latest
 
     depends_on:
       - mlflow-server
-
-    ports:
-      - "8000:8000"
 
     networks:
       - mlops-network
