@@ -45,6 +45,10 @@ if __name__ == "__main__":
             mlflow.log_param("alpha", alpha)
             mlflow.log_metric("rmse", rmse)
 
-            mlflow.sklearn.log_model(model, "model")
+            mlflow.sklearn.log_model(
+                sk_model=model,
+                artifact_path="model",
+                registered_model_name="harga_minyak_model"
+            )
 
             print(f"Run alpha={alpha}, RMSE={rmse}")
