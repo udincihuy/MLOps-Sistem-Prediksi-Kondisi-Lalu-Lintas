@@ -26,10 +26,11 @@ def preprocess():
     data['target'] = data['Close'].shift(-1)
 
     data = data.dropna()
+    data = data[['lag1', 'lag2', 'ma3', 'target']]
 
     data.to_csv("data/processed.csv", index=False)
 
-    print("[INFO] Preprocessing selesai!")
+    print("[INFO] Preprocessing selesai")
 
 if __name__ == "__main__":
     preprocess()
