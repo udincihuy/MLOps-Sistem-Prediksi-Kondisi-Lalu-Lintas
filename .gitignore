@@ -137,7 +137,7 @@ celerybeat.pid
 # Environments
 .env
 .envrc
-.venv
+
 env/
 venv/
 ENV/
@@ -209,6 +209,7 @@ __marimo__/
 # DVC - ignore raw data
 
 data/processed.csv
+data/raw/oil.csv
 
 # MLflow
 mlruns/
