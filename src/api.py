@@ -2,9 +2,9 @@ from fastapi import FastAPI
 import pandas as pd
 import yfinance as yf
 import mlflow
-
+from prometheus_fastapi_instrumentator import Instrumentator
 app = FastAPI()
-
+Instrumentator().instrument(app).expose(app)
 model = mlflow.pyfunc.load_model(
     "best_model"
 )
