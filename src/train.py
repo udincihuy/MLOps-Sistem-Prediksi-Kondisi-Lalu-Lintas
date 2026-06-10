@@ -21,7 +21,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     shuffle=False
 )
 
-for n_estimators in [50, 100, 200]:
+for n_estimators in [100, 200, 500]:
     for max_depth in [1, 3, 5]:
         for learning_rate in [0.01, 0.05, 0.1]:
 

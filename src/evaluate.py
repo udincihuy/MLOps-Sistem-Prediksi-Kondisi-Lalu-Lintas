@@ -1,8 +1,11 @@
 import pandas as pd
-import mlflow.sklearn
+import mlflow
 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
+
+
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
 
 
 def evaluate():
@@ -19,8 +22,8 @@ def evaluate():
         shuffle=False
     )
 
-    model = mlflow.sklearn.load_model(
-        "best_model"
+    model = mlflow.pyfunc.load_model(
+        "models:/harga_minyak_model@production"
     )
 
     y_pred = model.predict(X_test)
