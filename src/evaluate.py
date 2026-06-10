@@ -2,7 +2,7 @@ import pandas as pd
 import mlflow
 
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import root_mean_squared_error
 
 
 mlflow.set_tracking_uri("sqlite:///mlflow.db")
@@ -28,10 +28,10 @@ def evaluate():
 
     y_pred = model.predict(X_test)
 
-    rmse = mean_squared_error(
+    rmse = root_mean_squared_error(
         y_test,
         y_pred
-    ) ** 0.5
+    )
 
     print("=== EVALUATION RESULT ===")
     print(f"RMSE : {rmse:.4f}")
