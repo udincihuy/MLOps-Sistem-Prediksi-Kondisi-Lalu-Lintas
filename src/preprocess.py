@@ -16,7 +16,7 @@ def preprocess():
     data['Date'] = pd.to_datetime(data['Date'])
     data = data.sort_values(by="Date")
 
-    # ===== FEATURE ENGINEERING =====
+    # ===== FEATURE =====
     data['lag1'] = data['Close'].shift(1)
     data['lag2'] = data['Close'].shift(2)
 
