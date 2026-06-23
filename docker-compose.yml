@@ -33,7 +33,7 @@ services:
       - mlflow-server
 
     ports:
-      - "8000:8000"
+      - "8000"
 
     networks:
       - mlops-network

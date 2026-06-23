@@ -10,6 +10,7 @@ def ingest_data():
     if isinstance(data.columns, pd.MultiIndex):
         data.columns = data.columns.get_level_values(0)
 
+#ubah index jdi kolom tgl
     data.reset_index(inplace=True)
 
     filename = "data/raw/oil.csv"
@@ -24,6 +25,7 @@ def ingest_data():
         
        
         data["Date"] = pd.to_datetime(data["Date"])
+        
         data = data.drop_duplicates(subset=["Date"], keep="last")
 
     
